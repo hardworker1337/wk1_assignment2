@@ -10,7 +10,7 @@ size_t strlcpy(char *dst,const char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
-	if (i != 0)
+	if (size != 0)
 	{
 		dst[i] = '\0';
 	}
