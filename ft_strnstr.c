@@ -11,7 +11,9 @@ static int	ft_cmpchr(const char *cs1, const char *cs2, size_t len)
 			return (1);
 		i++;
 	}
-	return (0);
+	if (i == len)
+		return (0);
+	return (cs2[i] ? 1 : 0);
 }
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
