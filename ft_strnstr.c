@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/15 20:35:04 by bnafia            #+#    #+#             */
+/*   Updated: 2024/01/15 20:35:21 by bnafia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
 static int	ft_cmpchr(const char *cs1, const char *cs2, size_t len)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
 	while (cs2[i] && i < len)

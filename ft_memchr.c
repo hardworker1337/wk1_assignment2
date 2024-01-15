@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/15 20:34:08 by bnafia            #+#    #+#             */
+/*   Updated: 2024/01/15 20:34:30 by bnafia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
+	unsigned int		i;
 	const unsigned char	*tmp;
 
 	i = 0;	
