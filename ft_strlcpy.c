@@ -6,13 +6,13 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:32:16 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/15 20:32:20 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/20 17:32:49 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-size_t strlcpy(char *dst,const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 

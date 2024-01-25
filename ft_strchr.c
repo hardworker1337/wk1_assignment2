@@ -6,11 +6,11 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:33:19 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/15 20:33:28 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/24 23:45:41 by bnafia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

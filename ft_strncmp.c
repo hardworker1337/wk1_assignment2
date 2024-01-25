@@ -6,9 +6,11 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:33:37 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/15 20:33:39 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/20 12:44:27 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

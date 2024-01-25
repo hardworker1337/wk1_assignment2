@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:31:27 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/15 20:31:44 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/20 14:04:14 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,21 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	while (ft_isspace((char)nptr[i]))
 		i++;
-	if (nptr[i] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		sign = -1;
+		if (nptr[i] == '-')
+			sign = -1;
 		i++;
-	}
+	};
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (result > 9223372036854775807)
-			if (sign == -1)
-				return (0);
-			else
-				return (-1);
+	//	if (res > 9223372036854775807)
+	//	{
+	//		if (sign == -1)
+	//			return (0);
+	//		else
+	//			return (-1);
+	//	}
 		res = res * 10 + (nptr[i] - '0');
 		i++;
 	}
