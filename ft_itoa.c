@@ -6,99 +6,73 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:21:46 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/23 14:50:35 by nafia            ###   ########.fr       */
+/*   Updated: 2024/01/29 14:19:45 by bnafia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_get_size(int n)
+static int	ft_get_size(long long  n)
 {
 	int	size;
-	int	sign;
 
 	size = 0;
 	if (n < 0)
-	{
 		n = -n;
-		sign = -1;
-	}
 	while (n)
 	{
 		size++;
 		n = n / 10; 
 	}
-	if (sign == -1)
-		return (size + 1);
+	return (size);
+}
+
+static char	*ft_logic(int size, long long n, char *tmp)
+{
+	int	sign;
+
+	sign = 0;
+	if (n == 0)
+	{
+		tmp[0] = '0';
+		tmp[1] = '\0';
+	}
 	else
-		return (size);
-}
-
-static int	ft_pow(int nb, int pow, int n)
-{
-	int    i;
-	int    res;
-
-	i = 1;
-	res = 1;
-	if (n < 0)
 	{
-		pow = pow - 1;
-	}
-	while (i < pow )
-	{
-		res = res * nb;
-		i++;
-	}
-	return (res);
-}
+		if (n < 0)
+		{
+			sign = 1;
+			tmp[0] = '-';
+			n = -n;
+		}
+		tmp[--size] = '\0';
+		while (--size)
+		{
+			tmp[size] = (n % 10) + '0';
+			n = n / 10;
+		}
+		if(!sign)
+			tmp[size] = (n % 10) + '0';
 
-
-static	char	*ft_logic(int size, int n, char *tmp, int magic_nb)
-{
-	int i;
-
-	i = 0;
-	if (n < 0)
-	{
-		tmp[i] = '-';
-		i++;
-		n = -n;
 	}
-	while (i < size)
-	{
-		tmp[i] = (n / magic_nb) + '0';
-		n = n % magic_nb;
-		magic_nb = magic_nb / 10;
-		i++;
-	}
-	tmp[i] = '\0';
 	return (tmp);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int    size;
 	char     *tmp;
-	int    magic_nb;
 
 	size = ft_get_size(n);
-	if (n == 0)
-	{
-    		tmp = (char *)malloc(sizeof(char) * (2));
-		ft_memcpy(tmp, "0", 2);
-		return (tmp);
-	}
-	if (n == -2147483648)
-	{
-		tmp = (char *)malloc(sizeof(char) * (12));
-		ft_memcpy(tmp, "-2147483648", 12);
-		return (tmp);
-	}
-	tmp = (char *)malloc(sizeof(char) * (size + 1));
+	if (n < 0)
+		size += 2;
+	else if (n == 0)
+		size = 2;
+	else
+		size += 1;
+	tmp = (char *)malloc(sizeof(char) * (size));
 	if (!tmp)
 		return (NULL);
-	magic_nb = ft_pow(10, size, n);
-	ft_logic(size, n, tmp, magic_nb);
+	ft_logic(size, n, tmp);
 	return tmp;
 }

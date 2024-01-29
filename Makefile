@@ -6,7 +6,7 @@
 #    By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/20 18:30:25 by bnafia            #+#    #+#              #
-#    Updated: 2024/01/25 14:53:13 by bnafia           ###   ########.fr        #
+#    Updated: 2024/01/28 14:04:49 by bnafia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,20 @@ SRCS			=	ft_atoi.c ft_memcmp.c ft_strjoin.c  ft_strnstr.c ft_substr.c \
 					ft_isalnum.c ft_isdigit.c ft_isascii.c ft_isprint.c ft_strlen.c \
 					ft_bzero.c ft_memset.c ft_memcpy.c ft_strtrim.c ft_itoa.c \
 					ft_split.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
-					ft_putendl_fd.c ft_putnbr_fd.c
+					ft_putendl_fd.c ft_putnbr_fd.c ft_memmove.c ft_strlcat.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CC				= 	gcc
+RM				= 	rm -f
+CFLAGS			= 	-Wall -Wextra -Werror -I.
 
-NAME			= libft.a
+NAME			= 	libft.a
+
+BONUS_SRC 		=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+			  	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+BONUS_OBJS 		= $(BONUS_SRC:.c=.o)
 
 all:			$(NAME)
 
@@ -39,4 +44,6 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)	
 .PHONY:			all clean fclean re bonus

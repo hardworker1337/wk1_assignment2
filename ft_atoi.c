@@ -6,9 +6,11 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:31:27 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/20 14:04:14 by nafia            ###   ########.fr       */
+/*   Updated: 2024/01/29 14:22:10 by bnafia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_isspace(int c)
 {
@@ -40,13 +42,6 @@ int	ft_atoi(const char *nptr)
 	};
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-	//	if (res > 9223372036854775807)
-	//	{
-	//		if (sign == -1)
-	//			return (0);
-	//		else
-	//			return (-1);
-	//	}
 		res = res * 10 + (nptr[i] - '0');
 		i++;
 	}
