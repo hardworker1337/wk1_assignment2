@@ -6,13 +6,13 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:17:08 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/20 20:33:37 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/30 04:48:22 by bnafia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int	c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

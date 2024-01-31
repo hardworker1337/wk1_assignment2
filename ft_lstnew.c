@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:44:58 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/27 11:05:22 by nafia            ###   ########.fr       */
+/*   Updated: 2024/01/30 15:54:53 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new_node;
 
 	new_node = (t_list *)malloc(sizeof(t_list));
-        if(!new_node)
+	if (!new_node)
 		return (NULL);
 	new_node->content = content;
 	new_node->next = NULL;
-	return (new_node);		
+	return (new_node);
 }

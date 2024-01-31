@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:32:16 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/20 17:32:49 by nafia            ###   ########.fr       */
+/*   Updated: 2024/01/30 16:08:04 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = '\0';
 	}
 	i = 0;
-	while(src[i])
+	while (src[i])
 		i++;
 	return (i);
 }

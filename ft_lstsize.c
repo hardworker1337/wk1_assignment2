@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 19:39:02 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/27 19:45:06 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:04:58 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_lstsize(t_list *lst)
 {
 	t_list	*tmp_lst;
-	int	len;
+	int		len;
 
 	len = 0;
 	tmp_lst = lst;

@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:38:47 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/20 23:53:23 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/30 15:43:43 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*cdest;
-	unsigned char 	*csrc;
+	unsigned char	*csrc;
 
 	if (!dest && !src)
 	{

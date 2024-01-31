@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:34:46 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/24 15:30:53 by nafia            ###   ########.fr       */
+/*   Updated: 2024/01/30 16:10:16 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s)
 {
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 	char	*tmp;
 
 	len = ft_strlen(s);

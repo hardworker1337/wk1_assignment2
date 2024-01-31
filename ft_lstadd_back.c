@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 23:16:14 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/28 00:33:14 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/30 15:52:16 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp_lst;
 
-	
 	tmp_lst = *lst;
 	if (!new)
 		new->next = NULL;

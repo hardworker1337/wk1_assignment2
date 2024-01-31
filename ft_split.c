@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:47:59 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/24 15:42:35 by nafia            ###   ########.fr       */
+/*   Updated: 2024/01/31 15:15:40 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,43 @@ static int	ft_nb_words(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_get_word(char const *s, int s_index, int w_len)
+static char	*ft_get_word(char const *s, int s_index, int w_len, char **tmp_ele)
 {
-	char	*word;
-	int	l_index;
-	int	i;
+	int		l_index;
+	int		i;
 
-	word = (char *)malloc(sizeof(char) * (w_len + 1));
+	*tmp_ele = (char *)malloc(sizeof(char) * (w_len + 1));
+	if (!*tmp_ele)
+		return (NULL);
 	l_index = (s_index + w_len);
 	i = s_index;
 	while (s_index < l_index)
 	{
-		word[s_index - i] = s[s_index];
+		(*tmp_ele)[s_index - i] = s[s_index];
 		s_index++;
 	}
-	word[s_index - i] = '\0';
-	return (word);
+	(*tmp_ele)[s_index - i] = '\0';
+	return (*tmp_ele);
 }
 
-void	ft_logic(char **tmp, unsigned int size_s, char const *s, int c)
+void	free_tmp(char **tmp, int j)
+{
+	int	i;
+
+	i = 0;
+	while (i < j)
+	{
+		free(tmp[i]);
+		i++;
+	}
+	free(tmp);
+}
+
+char	**ft_logic(char **tmp, unsigned int size_s, char const *s, int c)
 {
 	size_t	i;
-	int	j;
-	int	count;
-	char	*word;
+	int		j;
+	int		count;
 
 	i = 0;
 	j = 0;
@@ -69,10 +82,11 @@ void	ft_logic(char **tmp, unsigned int size_s, char const *s, int c)
 	{
 		if ((s[i] == c || s[i] == '\0') && count != 0)
 		{
-			tmp[j] = (char *)malloc(sizeof(char) * (count + 1));
-			word = ft_get_word(s, (i - count), count);
-			ft_memcpy(tmp[j], word, count + 1);
-			free(word);
+			if (!ft_get_word(s, (i - count), count, &tmp[j]))
+			{
+				free_tmp(tmp, j);
+				return (NULL);
+			}
 			j++;
 			count = 0;
 		}
@@ -81,17 +95,21 @@ void	ft_logic(char **tmp, unsigned int size_s, char const *s, int c)
 		i++;
 	}
 	tmp[j] = NULL;
+	return (tmp);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**tmp;
-	int	nb_words;
+	int		nb_words;
 
+	if (!s)
+		return (NULL);
 	nb_words = ft_nb_words(s, c);
-	tmp = (char **)malloc(sizeof(char*) * (nb_words + 1));
+	tmp = (char **)malloc(sizeof(char *) * (nb_words + 1));
 	if (!tmp)
 		return (NULL);
-	ft_logic(tmp, ft_strlen(s), s, c);
-	return  (tmp);
+	if (ft_logic(tmp, ft_strlen(s), s, c))
+		return (tmp);
+	return (NULL);
 }

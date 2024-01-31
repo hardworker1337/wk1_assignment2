@@ -6,13 +6,13 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 11:35:35 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/25 00:31:39 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/30 04:52:35 by bnafia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int    get_start_pos(const char *s1, const char *set)
+static int	get_start_pos(const char *s1, const char *set)
 {
 	int	i;
 	int	flag;
@@ -32,10 +32,11 @@ static int    get_start_pos(const char *s1, const char *set)
 	}
 	return (i);
 }
-static int    get_last_pos(const char *s1, const char *set)
+
+static int	get_last_pos(const char *s1, const char *set)
 {
 	size_t	j;
-	int	flag;
+	int		flag;
 
 	j = ft_strlen(s1) - 1;
 	flag = 1;
@@ -51,14 +52,13 @@ static int    get_last_pos(const char *s1, const char *set)
 		}
 	}
 	return (j);
-
 }
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	int	begin;
-	int	end;
-	int	i;
+	int		begin;
+	int		end;
+	int		i;
 	char	*tmp;
 
 	begin = get_start_pos(s1, set);

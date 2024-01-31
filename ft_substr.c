@@ -6,34 +6,20 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 22:00:17 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/17 13:06:08 by nafia            ###   ########.fr       */
+/*   Updated: 2024/01/30 04:50:48 by bnafia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
-	char		*substr;
+	char			*substr;
 	unsigned int	slen;
 
 	if (!s)
 		return (NULL);
-	
 	slen = ft_strlen(s);
 	if (start > slen)
 		start = slen;

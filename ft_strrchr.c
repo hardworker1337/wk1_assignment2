@@ -6,18 +6,18 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:32:31 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/15 20:32:33 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/30 04:54:19 by bnafia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	*last;
 	char	*tmp;
-	
+
 	i = 0;
 	tmp = (char *)s;
 	last = NULL;

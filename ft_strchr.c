@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:33:19 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/24 23:45:41 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:09:47 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	char	*tmp;	
-	
+	int		i;
+	char	*tmp;
+
 	tmp = (char *)s;
 	i = 0;
 	while (tmp[i])
@@ -28,5 +28,4 @@ char	*ft_strchr(const char *s, int c)
 	if (tmp[i] == (char)c)
 		return (&tmp[i]);
 	return (NULL);
-	
 }

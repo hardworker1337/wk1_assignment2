@@ -6,13 +6,13 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:21:46 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/29 14:19:45 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/30 15:41:08 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_get_size(long long  n)
+static int	ft_get_size(long long n)
 {
 	int	size;
 
@@ -22,7 +22,7 @@ static int	ft_get_size(long long  n)
 	while (n)
 	{
 		size++;
-		n = n / 10; 
+		n /= 10;
 	}
 	return (size);
 }
@@ -34,8 +34,7 @@ static char	*ft_logic(int size, long long n, char *tmp)
 	sign = 0;
 	if (n == 0)
 	{
-		tmp[0] = '0';
-		tmp[1] = '\0';
+		ft_memcpy(tmp, "0", 2);
 	}
 	else
 	{
@@ -51,17 +50,16 @@ static char	*ft_logic(int size, long long n, char *tmp)
 			tmp[size] = (n % 10) + '0';
 			n = n / 10;
 		}
-		if(!sign)
+		if (!sign)
 			tmp[size] = (n % 10) + '0';
-
 	}
 	return (tmp);
 }
 
 char	*ft_itoa(int n)
 {
-	int    size;
-	char     *tmp;
+	int		size;
+	char	*tmp;
 
 	size = ft_get_size(n);
 	if (n < 0)
@@ -74,5 +72,5 @@ char	*ft_itoa(int n)
 	if (!tmp)
 		return (NULL);
 	ft_logic(size, n, tmp);
-	return tmp;
+	return (tmp);
 }

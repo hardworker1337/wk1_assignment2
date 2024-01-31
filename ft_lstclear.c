@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 12:53:14 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/28 13:00:50 by bnafia           ###   ########.fr       */
+/*   Updated: 2024/01/31 15:10:40 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *tmp_lst;
+	t_list	*tmp_lst;
 
 	while (*lst)
 	{

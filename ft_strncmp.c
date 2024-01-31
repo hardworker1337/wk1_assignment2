@@ -6,7 +6,7 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:33:37 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/20 12:44:27 by nafia            ###   ########.fr       */
+/*   Updated: 2024/01/30 04:56:05 by bnafia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned int	i;
 
 	i = 0;
-	while(s1[i] == s2[i] && s1[i] && i < n)
+	while (s1[i] == s2[i] && s1[i] && i < n)
 	{
 		i++;
 	}
