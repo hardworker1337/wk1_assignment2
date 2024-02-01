@@ -6,11 +6,11 @@
 /*   By: bnafia <bnafia@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:35:04 by bnafia            #+#    #+#             */
-/*   Updated: 2024/01/20 13:48:56 by nafia            ###   ########.fr       */
+/*   Updated: 2024/02/01 09:58:25 by nafia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 static int	ft_cmpchr(const char *cs1, const char *cs2, size_t len)
 {
